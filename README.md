@@ -1,15 +1,13 @@
-# Ahmed Mazen Website — Firebase Spark version
+# AHMED MAZEN — Neon Hearts & Skulls
 
-واجهة عربية للرسائل المجهولة واختبار من 8 أسئلة، تعمل مع Firebase Authentication وCloud Firestore على خطة Spark.
+واجهة عربية/إنجليزية بتصميم نيون بنفسجي ووردي، مع زخارف قلوب وجماجم متحركة وصورة بصرية أصلية في مجلد `assets`.
 
 ## الملفات
-- `index.html`: الموقع.
-- `firestore.rules`: قواعد Firestore التي تتحقق من درجة الاختبار دون كشف مفتاح الإجابات للزائر.
+- `index.html` واجهة الموقع وتكامل Firebase الحالي.
+- `assets/neon-skull-hero.webp` صورة التصميم الرئيسية.
 
-## إعداد Firebase
-1. فعّل Email/Password في Authentication.
-2. أنشئ Firestore Database.
-3. افتح Firestore > Rules، استبدل القواعد بالكامل بمحتوى `firestore.rules` ثم اضغط Publish.
-4. ارفع `index.html` إلى استضافة HTTPS ثابتة.
+## الرفع على GitHub Pages
+ارفع **محتويات هذا المجلد** إلى جذر المستودع `ahmed_mazen_website` (وليس ملف ZIP نفسه)، مع استبدال `index.html` القديم ورفع مجلد `assets` كاملًا. ثم افتح Settings → Pages وتأكد أن المصدر `Deploy from a branch` والفرع `main` والمجلد `/ (root)`.
 
-ملاحظة: آلية التحقق من الدرجة تستخدم قواعد Firestore وتسمح بمحاولات تحقق محدودة من 0 إلى 8، ولا تحتاج Cloud Functions. اختبر الموقع بحسابين تجريبيين قبل مشاركة الرابط علنًا.
+## تنبيه قبل الإطلاق العام
+هذه نسخة واجهة وتجربة أولية. تكامل Firebase الحالي يحتاج مراجعة قواعد Firestore وآلية تصحيح الاختبار قبل فتح الموقع للجمهور. لا تنشر قواعد تسمح للزوار بقراءة مفاتيح الإجابات الصحيحة. كما أن حماية الرسائل من السبام وحدود الإرسال تحتاج إعدادًا إضافيًا.
