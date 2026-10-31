@@ -47,6 +47,24 @@ header,main,footer{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 @media(max-width:700px){.hero{padding-top:48px}.logo{width:52px;height:52px}.brand small{font-size:9px}.top-actions{gap:6px}.top-actions .btn{padding:9px 11px}}
 
+
+/* Mobile performance pass: preserve the neon look with fewer expensive effects */
+@media(max-width:700px){
+ body{background-attachment:scroll!important}
+ body:before{display:none!important}
+ .ambient{filter:blur(38px);opacity:.2;animation:none!important}
+ .light-grid{opacity:.06}
+ .neon-decor span{filter:drop-shadow(0 0 5px #d946ef)!important;animation-duration:28s!important;opacity:.35}
+ .logo{animation:none!important}
+ .logo:before{display:none!important}
+ .hero:after{animation:none!important}
+ .eyebrow,.card{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+ .card{box-shadow:0 8px 24px #0004!important;transition:none!important}
+ .card:hover,.btn:hover{transform:none!important}
+ .btn{transition:none!important}
+}
+@media(prefers-reduced-motion:reduce){.neon-decor{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -89,7 +107,7 @@ header,main,footer{position:relative;z-index:1}
 </main>
 <footer class="footer">♛ © 2026 AHMED MAZEN · ALL RIGHTS RESERVED ♛</footer>
 <script>
-(()=>{const box=document.getElementById('neonDecor');if(!box)return;const symbols=['♥','♡','💀','♛'];for(let i=0;i<18;i++){const el=document.createElement('span');const sym=symbols[i%symbols.length];el.textContent=sym;el.className=(sym==='💀'?'skull':'heart');el.style.left=(Math.random()*100)+'%';el.style.animationDuration=(13+Math.random()*18)+'s';el.style.animationDelay=(-Math.random()*25)+'s';box.appendChild(el)}})();
+(()=>{const box=document.getElementById('neonDecor');if(!box)return;const symbols=['♥','♡','💀','♛'];for(let i=0;i<8;i++){const el=document.createElement('span');const sym=symbols[i%symbols.length];el.textContent=sym;el.className=(sym==='💀'?'skull':'heart');el.style.left=(Math.random()*100)+'%';el.style.animationDuration=(13+Math.random()*18)+'s';el.style.animationDelay=(-Math.random()*25)+'s';box.appendChild(el)}})();
 </script>
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";

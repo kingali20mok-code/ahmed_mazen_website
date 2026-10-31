@@ -1,0 +1,14 @@
+TAG: 2.14.5-clone-MOD-v6-xml-fix-final(24011894)
+PERMISSION: ROOT
+ABI: arm64-v8a
+Official RE-Mod by MT : true
+MODEL: SM-A127F
+SDK: 33
+RELEASE: 13
+TARGET_SDK: 30
+---StackTrace---
+java.lang.NullPointerException: Attempt to invoke virtual method 'l.ۧۖۧ l.ۘۖۧ.ۨ()' on a null object reference
+	at l.ۚۖۧ.run(Unknown Source:28)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+	at java.lang.Thread.run(Thread.java:1012)
