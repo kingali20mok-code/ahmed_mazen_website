@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function correct(uid, qid) {
+      return get(/databases/$(database)/documents/users/$(uid)/answerKey/$(qid)).data.correct;
+    }
+    match /profiles/{uid} {
+      allow read: if true;
+      allow create, update: if signedIn() && request.auth.uid == uid;
+    }
+    match /users/{uid}/answerKey/{qid} {
+      allow read, write: if signedIn() && request.auth.uid == uid
+        && qid.matches('q[0-7]');
+    }
+    match /users/{uid}/messages/{mid} {
+      allow read, delete: if signedIn() && request.auth.uid == uid;
+      allow create: if request.resource.data.keys().hasOnly(['text','createdAt'])
+        && request.resource.data.text is string
+        && request.resource.data.text.size() > 0
+        && request.resource.data.text.size() <= 500
+        && request.resource.data.createdAt == request.time;
+    }
+    match /users/{uid}/responses/{rid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow create: if request.resource.data.keys().hasOnly(['answers','score','createdAt'])
+        && request.resource.data.answers is map
+        && request.resource.data.answers.keys().hasAll(['q0','q1','q2','q3','q4','q5','q6','q7'])
+        && request.resource.data.answers.keys().size() == 8
+        && request.resource.data.answers.q0 is int && request.resource.data.answers.q0 >= 0 && request.resource.data.answers.q0 <= 3
+        && request.resource.data.answers.q1 is int && request.resource.data.answers.q1 >= 0 && request.resource.data.answers.q1 <= 3
+        && request.resource.data.answers.q2 is int && request.resource.data.answers.q2 >= 0 && request.resource.data.answers.q2 <= 3
+        && request.resource.data.answers.q3 is int && request.resource.data.answers.q3 >= 0 && request.resource.data.answers.q3 <= 3
+        && request.resource.data.answers.q4 is int && request.resource.data.answers.q4 >= 0 && request.resource.data.answers.q4 <= 3
+        && request.resource.data.answers.q5 is int && request.resource.data.answers.q5 >= 0 && request.resource.data.answers.q5 <= 3
+        && request.resource.data.answers.q6 is int && request.resource.data.answers.q6 >= 0 && request.resource.data.answers.q6 <= 3
+        && request.resource.data.answers.q7 is int && request.resource.data.answers.q7 >= 0 && request.resource.data.answers.q7 <= 3
+        && request.resource.data.score is int
+        && request.resource.data.score >= 0 && request.resource.data.score <= 8
+        && request.resource.data.score ==
+          ((request.resource.data.answers.q0 == correct(uid, 'q0')) ? 1 : 0) +
+          ((request.resource.data.answers.q1 == correct(uid, 'q1')) ? 1 : 0) +
+          ((request.resource.data.answers.q2 == correct(uid, 'q2')) ? 1 : 0) +
+          ((request.resource.data.answers.q3 == correct(uid, 'q3')) ? 1 : 0) +
+          ((request.resource.data.answers.q4 == correct(uid, 'q4')) ? 1 : 0) +
+          ((request.resource.data.answers.q5 == correct(uid, 'q5')) ? 1 : 0) +
+          ((request.resource.data.answers.q6 == correct(uid, 'q6')) ? 1 : 0) +
+          ((request.resource.data.answers.q7 == correct(uid, 'q7')) ? 1 : 0)
+        && request.resource.data.createdAt == request.time;
+    }
+  }
+}

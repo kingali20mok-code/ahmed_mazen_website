@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17102f">
+<title>Ahmed Mazen | Anonymous Messages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#100b20;--panel:#1c1532;--panel2:#241b40;--line:#ffffff18;--text:#f8f5ff;--muted:#b8aecf;--a:#a78bfa;--b:#ec4899;--good:#34d399}
+*{box-sizing:border-box}body{margin:0;font-family:Cairo,system-ui;background:radial-gradient(ellipse at 15% 0%,#56318a55,transparent 35%),radial-gradient(ellipse at 90% 20%,#a22e7750,transparent 30%),var(--bg);color:var(--text);min-height:100vh}
+.wrap{width:min(1050px,92%);margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 8px 30px #a78bfa55}.brand strong{display:block;font-size:18px}.brand small{color:var(--muted);font-size:11px;letter-spacing:.5px}.btn{border:0;border-radius:13px;padding:11px 17px;background:linear-gradient(110deg,var(--a),var(--b));color:white;font:700 14px Cairo;cursor:pointer}.btn.secondary{background:#ffffff12;border:1px solid var(--line)}.hero{text-align:center;padding:58px 0 34px}.eyebrow{display:inline-block;padding:7px 14px;border:1px solid #ffffff25;border-radius:50px;color:#dfd1ff;background:#ffffff09;font-size:12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.25;margin:18px 0 8px;font-weight:900}.gradient{background:linear-gradient(90deg,#c4b5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:610px;margin:0 auto 23px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:22px 0 45px}.card{background:linear-gradient(145deg,#ffffff0d,#ffffff06);border:1px solid var(--line);border-radius:23px;padding:23px;box-shadow:0 15px 50px #0002}.card h2{margin:0 0 8px;font-size:21px}.card p,.hint{color:var(--muted);font-size:13px}.icon{font-size:27px;margin-bottom:8px}.section{margin:18px 0}.section h2{font-size:24px}.field{width:100%;background:#100b20;border:1px solid #ffffff24;color:white;border-radius:12px;padding:13px 14px;font:14px Cairo;margin:7px 0 13px;outline:none}.field:focus{border-color:var(--a)}label{font-size:13px;color:#e4dcf5}.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}.hidden{display:none!important}.question{padding:14px;border:1px solid var(--line);border-radius:15px;margin:12px 0;background:#ffffff08}.options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.option{padding:10px;border:1px solid var(--line);border-radius:11px;background:#ffffff08;cursor:pointer}.option:has(input:checked){border-color:var(--a);background:#a78bfa25}.option input{accent-color:#a78bfa}.result{padding:13px;border-radius:13px;background:#34d39918;border:1px solid #34d39955;color:#b9ffe5;margin:12px 0}.linkbox{direction:ltr;text-align:left;overflow-wrap:anywhere;background:#0e091b;padding:12px;border-radius:10px;color:#d8caff;font-size:12px}.footer{text-align:center;color:#817797;padding:24px;font-size:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding-top:35px}.top{gap:10px}.brand strong{font-size:15px}.options{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap top">
+ <div class="brand"><div class="logo">AM</div><div><strong>Ahmed Mazen</strong><small>ANONYMOUS MESSAGES · FRIENDSHIP QUIZ</small></div></div>
+ <button class="btn secondary" id="accountBtn">دخول / حساب جديد</button>
+</header>
+<main class="wrap">
+<section class="hero">
+ <span class="eyebrow">✨ مساحتك مع أصحابك</span>
+ <h1>اعرف مين <span class="gradient">فاهمك بجد</span></h1>
+ <p>استقبل رسائل صريحة من غير أسماء، واعمل اختبار من 8 أسئلة وشوف مين صاحبك اللي يعرفك أكتر.</p>
+ <button class="btn" onclick="document.querySelector('#account').scrollIntoView({behavior:'smooth'})">ابدأ دلوقتي</button>
+</section>
+<section class="grid">
+ <article class="card"><div class="icon">💌</div><h2>رسائل الصراحة</h2><p>شارك رابطك وخلي أصحابك يبعتولك كلامهم بصراحة ومن غير ما يظهر اسمهم.</p></article>
+ <article class="card"><div class="icon">🏆</div><h2>مين يعرفك أكتر؟</h2><p>اختار 8 أسئلة وحدد إجاباتك، وأصحابك يتحدّوك والنتيجة تظهر في لوحة ترتيب.</p></article>
+</section>
+<section class="card section" id="account">
+ <h2>حسابك</h2><p>سجّل بالبريد الإلكتروني عشان تحفظ صفحتك وأسئلتك ورسائلك.</p>
+ <div class="row"><div><label>البريد الإلكتروني</label><input class="field" id="email" type="email" placeholder="name@example.com"></div><div><label>كلمة المرور</label><input class="field" id="password" type="password" placeholder="6 أحرف على الأقل"></div></div>
+ <div class="row"><button class="btn" id="signup">إنشاء حساب</button><button class="btn secondary" id="login">دخول</button><button class="btn secondary hidden" id="logout">تسجيل خروج</button></div>
+ <p class="hint" id="authStatus">لم تسجل الدخول بعد.</p>
+</section>
+<section class="card section hidden" id="dashboard">
+ <h2>صفحتك الشخصية</h2><label>الاسم اللي يظهر لأصحابك</label><input class="field" id="displayName" maxlength="30" placeholder="Ahmed Mazen">
+ <button class="btn" id="saveProfile">حفظ الاسم</button>
+ <div class="section"><h2>رابط صفحتك</h2><div class="linkbox" id="shareLink"></div><button class="btn secondary" id="copyLink">نسخ الرابط</button></div>
+ <div class="section"><h2>اختبار مين يعرفك أكتر؟</h2><p class="hint">اختار 8 أسئلة واكتب 4 اختيارات وحدد الإجابة الصح في كل سؤال. النتيجة يتم التحقق منها بقواعد قاعدة البيانات دون إظهار الإجابات الصحيحة.</p><div id="questionsEditor"></div><button class="btn" id="saveQuiz">حفظ الاختبار</button></div>
+ <div class="section"><h2>رسائل الصراحة 💌</h2><div id="inbox" class="hint">سجّل الدخول لعرض الرسائل.</div></div>
+ <div class="section"><h2>نتائج تحدي الأصدقاء 🏆</h2><div id="scores" class="hint">لا توجد نتائج بعد.</div></div>
+</section>
+<section class="card section hidden" id="publicPage">
+ <h2 id="publicTitle">اختبار صديقك</h2><p>جاوب على الأسئلة وشوف نتيجتك!</p><div id="publicQuestions"></div>
+ <label>ابعت رسالة صراحة (اختياري)</label><textarea class="field" id="anonymousMessage" rows="3" maxlength="500" placeholder="اكتب رسالتك هنا من غير اسم..."></textarea>
+ <button class="btn" id="submitPublic">إرسال الإجابات</button><div id="publicResult"></div>
+</section>
+</main>
+<footer class="footer">Made with ♥ · Ahmed Mazen</footer>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,doc,setDoc,getDoc,collection,addDoc,getDocs,query,orderBy,serverTimestamp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig={apiKey:"AIzaSyCov_nxyLXrFSu2nWqwoT2a3fcvv1i3Alw",authDomain:"ahmed-mazen-32f3a.firebaseapp.com",projectId:"ahmed-mazen-32f3a",storageBucket:"ahmed-mazen-32f3a.firebasestorage.app",messagingSenderId:"684934074492",appId:"1:684934074492:web:ca8bf15903a90d9b4379f9"};
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);let me=null,quiz=[];
+const $=id=>document.getElementById(id);
+const defaults=["إيه أكتر أكلة بحبها؟","إيه لوني المفضل؟","إيه أكتر حاجة بتعصبني؟","أنا شخص صباحي ولا بليل؟","إيه المكان اللي بحب أروحه؟","إيه نوع الأغاني اللي بسمعها؟","إيه أكتر تطبيق بستخدمه؟","إيه الحاجة اللي بتفرحني بسرعة؟"];
+function editor(){if(!quiz.length)quiz=defaults.map((q,i)=>({q,opts:["اختيار 1","اختيار 2","اختيار 3","اختيار 4"],correct:0}));$('questionsEditor').innerHTML=quiz.map((x,i)=>`<div class="question"><label>السؤال ${i+1}</label><input class="field qtext" data-i="${i}" value="${esc(x.q)}"><div class="options">${x.opts.map((o,j)=>`<label class="option"><input type="radio" name="correct${i}" value="${j}" ${x.correct===j?'checked':''}><input class="field opt" data-i="${i}" data-j="${j}" value="${esc(o)}" aria-label="اختيار"></label>`).join('')}</div><p class="hint">حدد دائرة الإجابة الصحيحة.</p></div>`).join('');}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+$('signup').onclick=async()=>{try{await createUserWithEmailAndPassword(auth,$('email').value,$('password').value)}catch(e){alert(e.message)}};
+$('login').onclick=async()=>{try{await signInWithEmailAndPassword(auth,$('email').value,$('password').value)}catch(e){alert(e.message)}};
+$('logout').onclick=()=>signOut(auth);
+onAuthStateChanged(auth,async u=>{me=u;$('dashboard').classList.toggle('hidden',!u);$('logout').classList.toggle('hidden',!u);$('login').classList.toggle('hidden',!!u);$('signup').classList.toggle('hidden',!!u);$('authStatus').textContent=u?'تم تسجيل الدخول بنجاح.':'لم تسجل الدخول بعد.';if(u){const s=await getDoc(doc(db,'profiles',u.uid));if(s.exists()){$('displayName').value=s.data().name||'Ahmed Mazen';quiz=s.data().questions||[];}editor();$('shareLink').textContent=location.origin+location.pathname+'?u='+u.uid;await loadPrivate();}});
+$('saveProfile').onclick=async()=>{if(!me)return;await setDoc(doc(db,'profiles',me.uid),{name:$('displayName').value.trim()||'Ahmed Mazen',updatedAt:serverTimestamp()},{merge:true});alert('اتحفظ الاسم');};
+$('saveQuiz').onclick=async()=>{if(!me)return;let qs=[];for(let i=0;i<8;i++){let q=document.querySelector(`.qtext[data-i="${i}"]`)?.value.trim();let opts=[...document.querySelectorAll(`.opt[data-i="${i}"]`)].map(x=>x.value.trim());let correct=Number(document.querySelector(`input[name="correct${i}"]:checked`)?.value);if(!q||opts.length!==4||opts.some(x=>!x)||!Number.isInteger(correct)){alert('كمّل السؤال والاختيارات وحدد الإجابة الصح في كل سؤال');return;}qs.push({id:'q'+i,q,opts});await setDoc(doc(db,'users',me.uid,'answerKey','q'+i),{correct});}await setDoc(doc(db,'profiles',me.uid),{name:$('displayName').value.trim()||'Ahmed Mazen',questions:qs,updatedAt:serverTimestamp()},{merge:true});quiz=qs.map((x,i)=>({...x,correct:0}));alert('اختبارك اتحفظ واتنشر!');};
+$('copyLink').onclick=async()=>{await navigator.clipboard.writeText($('shareLink').textContent);alert('تم نسخ الرابط');};
+async function loadPrivate(){let [m,r]=await Promise.all([getDocs(collection(db,'users',me.uid,'messages')),getDocs(query(collection(db,'users',me.uid,'responses'),orderBy('createdAt','desc')))]);$('inbox').innerHTML=m.empty?'لسه مفيش رسائل.':m.docs.map(d=>`<div class="question">${esc(d.data().text)}</div>`).join('');$('scores').innerHTML=r.empty?'لسه مفيش مشاركات.':r.docs.map(d=>`<div class="question">صديق مجهول — ${d.data().score}/8 (${Math.round(d.data().score/8*100)}%)</div>`).join('');}
+const uid=new URLSearchParams(location.search).get('u');
+if(uid){$('publicPage').classList.remove('hidden');$('account').classList.add('hidden');$('dashboard').classList.add('hidden');try{let p=await getDoc(doc(db,'profiles',uid));if(!p.exists())throw Error('الصفحة غير موجودة');$('publicTitle').textContent='اختبار '+(p.data().name||'صديقك');quiz=p.data().questions||[];if(quiz.length!==8)throw Error('صاحب الصفحة لم يجهز الاختبار بعد');$('publicQuestions').innerHTML=quiz.map((x,i)=>`<div class="question"><b>${i+1}. ${esc(x.q)}</b><div class="options">${x.opts.map((o,j)=>`<label class="option"><input type="radio" name="${x.id}" value="${j}"> ${esc(o)}</label>`).join('')}</div></div>`).join('');$('submitPublic').onclick=async()=>{let answers={};for(let x of quiz){let v=document.querySelector(`input[name="${x.id}"]:checked`);if(!v){alert('جاوب على الأسئلة الثمانية الأول');return;}answers[x.id]=Number(v.value);}let saved=false, finalScore=null;for(let candidate=0;candidate<=8;candidate++){try{await addDoc(collection(db,'users',uid,'responses'),{answers,score:candidate,createdAt:serverTimestamp()});saved=true;finalScore=candidate;break;}catch(err){if(err.code!=='permission-denied')throw err;}}if(!saved)throw Error('تعذر التحقق من النتيجة. حاول مرة أخرى.');let msg=$('anonymousMessage').value.trim();if(msg)await addDoc(collection(db,'users',uid,'messages'),{text:msg,createdAt:serverTimestamp()});$('publicResult').innerHTML='<div class="result">تم إرسال إجاباتك بنجاح ❤️ نتيجتك '+finalScore+' من 8.</div>';$('submitPublic').disabled=true;};}catch(e){$('publicQuestions').textContent=e.message;}}
+</script>
+</body></html>
