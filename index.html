@@ -65,6 +65,27 @@ header,main,footer{position:relative;z-index:1}
 }
 @media(prefers-reduced-motion:reduce){.neon-decor{display:none!important}}
 
+/* AHMED MAZEN — immersive 3D neon edition */
+:root{--depth-purple:#7c3aed;--depth-pink:#ec4899;--depth-cyan:#22d3ee}
+body{perspective:1200px}
+.hero{transform-style:preserve-3d;isolation:isolate;border:1px solid #d8b4fe66;box-shadow:0 28px 70px #0008,0 0 0 1px #ec489933,inset 0 0 70px #8b5cf633;position:relative}
+.hero:before{content:"";position:absolute;inset:12px;border-radius:26px;border:1px solid #ffffff15;box-shadow:inset 0 0 35px #a855f722;pointer-events:none;transform:translateZ(18px)}
+.hero:after{transform:translateZ(55px);text-shadow:0 0 12px #f0abfc,0 0 28px #d946ef,0 0 65px #7c3aed;animation:crown3d 5s ease-in-out infinite}
+.hero h1,.hero p,.hero .eyebrow,.hero .btn{position:relative;transform:translateZ(34px)}
+.hero .btn{box-shadow:0 12px 0 #681a9b,0 18px 35px #c026d955,0 0 32px #ec489955;transform:translateZ(42px);transition:transform .2s,box-shadow .2s}
+.hero .btn:active{transform:translateZ(25px) translateY(5px);box-shadow:0 5px 0 #681a9b,0 10px 22px #c026d944}
+.grid{perspective:1000px}
+.grid .card{transform-style:preserve-3d;box-shadow:0 18px 0 #10071d,0 25px 45px #0008,inset 0 1px #ffffff22;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.grid .card .icon{transform:translateZ(24px);text-shadow:0 0 18px #ff4ecb}
+.grid .card h2,.grid .card p{transform:translateZ(14px)}
+@media(hover:hover) and (min-width:701px){.grid .card:hover{transform:translateY(-9px) rotateX(4deg) rotateY(-3deg) translateZ(12px);box-shadow:0 24px 0 #10071d,0 38px 65px #0009,0 0 36px #a855f755,inset 0 1px #ffffff33}}
+.logo{box-shadow:0 8px 0 #651a91,0 12px 25px #a855f799,0 0 45px #ec489966;transform:translateZ(18px)}
+.card{border-color:#d8b4fe35;box-shadow:0 12px 0 #10091b,0 22px 45px #0007,inset 0 1px #ffffff20}
+.btn{position:relative;box-shadow:0 7px 0 #681a9b,0 12px 28px #a435e955,0 0 25px #c026d944}
+@keyframes crown3d{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -9px;rotate:5deg}}
+@media(max-width:700px){body{perspective:none}.hero{transform:none;box-shadow:0 12px 35px #0007,0 0 22px #a855f733,inset 0 0 40px #8b5cf622}.hero:before{inset:7px;transform:none}.hero:after{transform:none;animation:none}.hero h1,.hero p,.hero .eyebrow,.hero .btn{transform:none}.hero .btn{box-shadow:0 5px 0 #681a9b,0 10px 24px #c026d944}.grid .card{transform:none;box-shadow:0 7px 0 #10071d,0 14px 28px #0006,inset 0 1px #ffffff18;transition:none}.grid .card .icon,.grid .card h2,.grid .card p{transform:none}.card{box-shadow:0 7px 0 #10091b,0 14px 28px #0006!important}.btn{box-shadow:0 5px 0 #681a9b,0 9px 22px #a435e944}}
+@media(prefers-reduced-motion:reduce){.hero:after{animation:none!important}}
+
 </style>
 </head>
 <body>
